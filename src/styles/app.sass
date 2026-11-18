@@ -85,9 +85,10 @@ div .article-wrap
 @media (min-width: 700px)
   html
     zoom: 1.1
-  // the zoom also scales the 100dvh min-height: compensate it on the
-  // home page so the footer (About button) fits without scrolling
-  div .wraper:has(> .welcome-page)
+  // the zoom also scales the 100dvh min-height: compensate it while the
+  // content does not fill the screen (home and loading states) so the
+  // footer (About button) fits without scrolling
+  div .wraper:has(> .welcome-page, .waiting-msg)
     min-height: calc(100dvh / 1.1)
   div .wraper
     background-image: url("../assets/bg/websiteBackground.webp")

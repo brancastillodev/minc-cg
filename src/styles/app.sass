@@ -83,13 +83,6 @@ div .article-wrap
   text-shadow: 0.13rem 0.14rem 0 rgba(0, 0, 0, 0.9)
 
 @media (min-width: 700px)
-  html
-    zoom: 1.1
-  // the zoom also scales the 100dvh min-height: compensate it while the
-  // content does not fill the screen (home and loading states) so the
-  // footer (About button) fits without scrolling
-  div .wraper:has(> .welcome-page, .waiting-msg)
-    min-height: calc(100dvh / 1.1)
   div .wraper
     background-image: url("../assets/bg/websiteBackground.webp")
     background-size: cover
@@ -98,3 +91,13 @@ div .article-wrap
     width: 6rem
   .simple-text
     font-size: 1rem
+
+// 110% zoom helps smaller desktop screens; full-HD and larger stay at 100%
+@media (min-width: 700px) and (max-width: 1499px)
+  html
+    zoom: 1.1
+  // the zoom also scales the 100dvh min-height: compensate it while the
+  // content does not fill the screen (home and loading states) so the
+  // footer (About button) fits without scrolling
+  div .wraper:has(> .welcome-page, .waiting-msg)
+    min-height: calc(100dvh / 1.1)

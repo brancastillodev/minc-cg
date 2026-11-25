@@ -8,6 +8,7 @@ import Programming from './componets/Programming'
 import Market from './componets/Market'
 import AboutUs from './componets/AboutUs'
 import ArticleCard from './commons/ArticleCard';
+import ProductPage from './commons/ProductPage';
 import { Analytics } from "@vercel/analytics/next"
 
 const router = createBrowserRouter([
@@ -20,8 +21,7 @@ const router = createBrowserRouter([
       { path: "programming", element: <Programming /> },
       { path: "videos", element: <Videos /> },
       { path: "market", element: <Market /> },
-      // market is under maintenance: product pages show the same notice
-      { path: "market/:id", element: <Market /> },
+      { path: "market/:id", element: <ProductPage /> },
       { path: "about-us", element: <AboutUs /> },
     ],
   },
